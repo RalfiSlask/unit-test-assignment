@@ -1,4 +1,4 @@
-# Inlämningsuppgift 1 - Enhetstester med jest
+# Övning - Enhetstester med jest
 
 Syftet med detta repo är att det skall fungera som er kod som ni får given. Ni skall inte ändra på funktionaliteten som nu finns på något sätt. För att komma igång med inlämningen behöver ni göra följande:
 
@@ -21,6 +21,4 @@ Där det sista kommandot kommer att sätta igång applikationen så att ni kan s
 
 ## Er uppgift
 
-Det ni behöver göra i denna inlämning är att skapa tester för de funktioner som finns i main.ts och functions.ts. Ni behöver skapa godkända tester för så många funktioner ni hinner med. Ni behöver ha ett code coverage på minst 50%. Detta kommer att ge er ett G.
-
-Om ni vill uppnå ett VG skall ni även implementera en godkänt sortering av listan och skriva tester för denna funktion också. Ni behöver också ha ett code coverage på över 90%.
+Det ni behöver göra i denna inlämning är att skapa tester för de funktioner som finns i main.ts och functions.ts. Ni behöver skapa godkända tester för så många funktioner ni hinner med.
