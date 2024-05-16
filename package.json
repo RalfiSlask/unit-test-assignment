@@ -23,8 +23,11 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "jsdom",
+    "setupFiles": [
+      "<rootDir>/src/ts/setupTests.ts"
+    ],
     "moduleNameMapper": {
-      "\\.(css)$": "<rootDir>/src/__mocks__/styleMock.ts"
+      "\\.(css)$": "<rootDir>/src/ts/__mocks__/styleMock.ts"
     },
     "collectCoverage": true,
     "coverageReporters": [

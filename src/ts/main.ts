@@ -1,4 +1,3 @@
-import './../styles/main.scss';
 import { addTodo, changeTodo, removeAllTodos } from './functions';
 import { Todo } from './models/todo';
 
@@ -21,7 +20,7 @@ document.getElementById('clearTodos')?.addEventListener('click', () => {
   }
 );
 
-function createNewTodo(todoText: string, todos: Todo[]) {
+export function createNewTodo(todoText: string, todos: Todo[]) {
   let result = addTodo(todoText, todos);
 
   if (result.success) {
@@ -31,13 +30,15 @@ function createNewTodo(todoText: string, todos: Todo[]) {
   }
 }
 
-function createHtml(todos: Todo[]) {
+export function createHtml(todos: Todo[]) {
   localStorage.setItem('todos', JSON.stringify(todos));
 
   let todosContainer: HTMLUListElement = document.getElementById(
     'todos'
   ) as HTMLUListElement;
 
+  // Varför behöver jag lägga till detta för att testet ska fungera?
+  if (todosContainer === null) return;
   todosContainer.innerHTML = '';
 
   for (let i = 0; i < todos.length; i++) {
@@ -57,12 +58,12 @@ function createHtml(todos: Todo[]) {
   }
 }
 
-function toggleTodo(todo: Todo) {
+export function toggleTodo(todo: Todo) {
   changeTodo(todo);
   createHtml(todos);
 }
 
-function displayError(error: string, show: boolean) {
+export function displayError(error: string, show: boolean) {
   let errorContainer: HTMLDivElement = document.getElementById(
     'error'
   ) as HTMLDivElement;
@@ -76,7 +77,7 @@ function displayError(error: string, show: boolean) {
   }
 }
 
-function clearTodos(todos: Todo[]) {
+export function clearTodos(todos: Todo[]) {
   removeAllTodos(todos);
   createHtml(todos);
 }
