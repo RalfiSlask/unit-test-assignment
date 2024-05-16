@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "jest --watchAll --verbose"
+    "test": "jest --verbose"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
@@ -21,8 +21,11 @@
     "sass": "^1.75.0"
   },
   "jest": {
-    "preset": "js-test",
-    "environment": "jsdom",
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/src/__mocks__/styleMock.ts"
+    },
     "collectCoverage": true,
     "coverageReporters": [
       "html"
